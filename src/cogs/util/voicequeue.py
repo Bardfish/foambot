@@ -1,3 +1,5 @@
+from discord import ClientException
+
 
 class VoiceQueue:
     def __init__(self, bot):
@@ -13,7 +15,13 @@ class VoiceQueue:
 
     async def add(self, file_name, vc, tc, server):
         if not self.bot.is_voice_connected(server):
-            await self.join_voice_channel(vc)
+            try:
+                await self.join_voice_channel(vc)
+            except ClientException:
+                # TODO create the correct solution for handling this
+                # for some reason that function will say it's disconnected even if it is connected
+                await self.voice.disconnect()
+                await self.join_voice_channel(vc)
         else:
             if vc != self.vc:
                 if self.playing:
