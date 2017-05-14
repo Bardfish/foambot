@@ -17,7 +17,9 @@ class Foam:
         if vc:
             await self.bot.player.add(
                 os.path.abspath(
-                    SAMPLES_DIR + "/%s/" % category + random.choice(os.listdir(SAMPLES_DIR + "/" + category))), vc, tc)
+                    SAMPLES_DIR + "/%s/" % category + random.choice(os.listdir(SAMPLES_DIR + "/" + category))), vc, tc,
+                ctx.message.server
+            )
         else:
             await self.bot.send_message(tc, "You're not in any voice channels mai foam friendly friend!")
 

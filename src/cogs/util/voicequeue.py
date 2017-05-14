@@ -11,8 +11,8 @@ class VoiceQueue:
         self.voice = await self.bot.join_voice_channel(vc)
         self.vc = vc
 
-    async def add(self, file_name, vc, tc):
-        if not self.bot.is_voice_connected(list(self.bot.servers)[0]):
+    async def add(self, file_name, vc, tc, server):
+        if not self.bot.is_voice_connected(server):
             await self.join_voice_channel(vc)
         else:
             if vc != self.vc:
