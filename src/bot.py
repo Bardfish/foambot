@@ -7,14 +7,13 @@ def load_credentials():
     with open('creds.json') as f:
         return json.load(f)
 
-description = "The ultimate annoy bot"
-cmd_prefix = '--'
-
 cmd_extensions = [
     'cogs.ping',
     'cogs.foam'
 ]
 
+description = "The ultimate annoy bot"
+cmd_prefix = '--'
 bot = commands.Bot(description=description, command_prefix=cmd_prefix)
 bot.player = VoiceQueue(bot)
 for extension in cmd_extensions:
