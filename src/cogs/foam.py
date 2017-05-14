@@ -47,7 +47,7 @@ class Foam:
             "Waddup mai foam friendly friends?! Here's a list of my commands. I only do voice commands at the moment"
             " but I plan to learn more things really soon :aaam:\n"
             "\nCOMMANDS:"
-            "\n[--foam] (plays a sound related to foam and how much of it we have)"
+            "\n[--foam] (plays a sound related to foam and how much of it we has)"
             "\n[--doctor] (I'm a fucking doctor)"
             "\n[--noises] (Not very many, but they get the job done)"
             "\n[--random] (An assortment of foam-related things without a specific category)"
