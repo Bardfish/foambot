@@ -1,0 +1,4 @@
+.idea
+env
+creds.json
+*__pycache__
