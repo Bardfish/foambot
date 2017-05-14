@@ -11,60 +11,35 @@ class Foam:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
-    async def foam(self, ctx):
+    async def play_sound_clip(self, ctx, category):
         vc = ctx.message.author.voice_channel
         tc = ctx.message.channel
         if vc:
             await self.bot.player.add(
                 os.path.abspath(
-                    SAMPLES_DIR + "/we_got_foam/" + random.choice(os.listdir(SAMPLES_DIR + "/we_got_foam"))), vc, tc)
+                    SAMPLES_DIR + "/%s/" % category + random.choice(os.listdir(SAMPLES_DIR + "/" + category))), vc, tc)
         else:
             await self.bot.send_message(tc, "You're not in any voice channels mai foam friendly friend!")
+
+    @commands.command(pass_context=True)
+    async def foam(self, ctx):
+        await self.play_sound_clip(ctx, "we_got_foam")
 
     @commands.command(pass_context=True)
     async def doctor(self, ctx):
-        vc = ctx.message.author.voice_channel
-        tc = ctx.message.channel
-        if vc:
-            await self.bot.player.add(
-                os.path.abspath(
-                    SAMPLES_DIR + "/doctor/" + random.choice(os.listdir(SAMPLES_DIR + "/doctor"))), vc, tc)
-        else:
-            await self.bot.send_message(tc, "You're not in any voice channels mai foam friendly friend!")
+        await self.play_sound_clip(ctx, "doctor")
 
     @commands.command(pass_context=True)
     async def noises(self, ctx):
-        vc = ctx.message.author.voice_channel
-        tc = ctx.message.channel
-        if vc:
-            await self.bot.player.add(
-                os.path.abspath(
-                    SAMPLES_DIR + "/noises/" + random.choice(os.listdir(SAMPLES_DIR + "/noises"))), vc, tc)
-        else:
-            await self.bot.send_message(tc, "You're not in any voice channels mai foam friendly friend!")
+        await self.play_sound_clip(ctx, "noises")
 
     @commands.command(pass_context=True)
     async def memes(self, ctx):
-        vc = ctx.message.author.voice_channel
-        tc = ctx.message.channel
-        if vc:
-            await self.bot.player.add(
-                os.path.abspath(
-                    SAMPLES_DIR + "/custom/" + random.choice(os.listdir(SAMPLES_DIR + "/custom"))), vc, tc)
-        else:
-            await self.bot.send_message(tc, "You're not in any voice channels mai foam friendly friend!")
+        await self.play_sound_clip(ctx, "custom")
 
     @commands.command(pass_context=True)
     async def random(self, ctx):
-        vc = ctx.message.author.voice_channel
-        tc = ctx.message.channel
-        if vc:
-            await self.bot.player.add(
-                os.path.abspath(
-                    SAMPLES_DIR + "/" + random.choice(os.listdir(SAMPLES_DIR))), vc, tc)
-        else:
-            await self.bot.send_message(tc, "You're not in any voice channels mai foam friendly friend!")
+        await self.play_sound_clip(ctx, "/")
 
     @commands.command(pass_context=True)
     async def halp(self, ctx):
