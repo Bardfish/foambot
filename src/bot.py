@@ -9,7 +9,8 @@ def load_credentials():
 
 cmd_extensions = [
     'cogs.ping',
-    'cogs.foam'
+    'cogs.foam',
+    'cogs.response'
 ]
 
 description = "The ultimate annoy bot"

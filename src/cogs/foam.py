@@ -59,7 +59,7 @@ class Foam:
     async def on_message(self, message):
         if message.author.id != self.bot.user.id:
             contents = message.content.lower()
-            if "--foam" not in contents and 'foam' in contents:
+            if "--foam" not in contents and 'foam' in contents and 'foambot' not in contents:
                 await self.bot.send_message(message.channel, 'Did someone say foam!? I gotz foam!!!!! :grimacing:')
 
 
