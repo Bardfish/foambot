@@ -1,6 +1,5 @@
 import json
 from discord.ext import commands
-
 from audio import AudioPlayer
 
 
@@ -12,6 +11,7 @@ def load_credentials():
 cmd_extensions = [
     'cogs.ping',
     'cogs.foam',
+    'cogs.bizkit',
     'cogs.response'
 ]
 

@@ -34,7 +34,7 @@ class Foam:
         await self.bot.say(
             "Waddup mai foam friendly friends?! Here's a list of my commands. I only do voice commands at the moment"
             " but I plan to learn more things really soon :ok_hand:\n"
-            "\nCOMMANDS:"
+            "\nFoam COMMANDS:"
             "\n[--foam] Plays a sound related to foam and how much of it we has"
             "\n[--doctor] I'm a fucking doctor"
             "\n[--noises] Not very many, but they get the job done"
